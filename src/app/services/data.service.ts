@@ -12,12 +12,14 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   getSets = (): Observable<Set[]> => {
-    return this.http.get('assets/mockData.json').pipe(map((res: Set[]) => res));
+    return this.http
+      .get('assets/mockData.json')
+      .pipe(map((sets: Set[]) => sets));
   };
 
   getSpecificSet = (id: string): Observable<Set[]> => {
     return this.http
       .get('assets/mockData.json')
-      .pipe(map((res: Set[]) => res.filter((re: Set) => re.id === id)));
+      .pipe(map((sets: Set[]) => sets.filter((set: Set) => set.id === id)));
   };
 }
