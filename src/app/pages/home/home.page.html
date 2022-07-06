@@ -11,7 +11,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <div>
+  <div *ngFor="let set of sets$ | async">
     <app-set [set]="set"></app-set>
   </div>
 </ion-content>

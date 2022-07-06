@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Set } from '../../models/set.model';
 import { DataService } from '../../services/data.service';
 
@@ -8,7 +9,7 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  sets: Set[];
+  sets$: Observable<Response>;
 
   constructor(private dataService: DataService) {}
   ngOnInit() {
@@ -16,10 +17,10 @@ export class HomePage {
   }
 
   getSets = () => {
-    const setsObservable$ = this.dataService.getSets();
-    setsObservable$.subscribe((setsData: any) => {
-      this.sets = setsData;
-      console.log(this.sets);
-    });
+    this.sets$ = this.dataService.getSets();
+    // setsObservable$.subscribe((setsData: any) => {
+    //   this.sets = setsData;
+    //   console.log(this.sets);
+    // });
   };
 }
