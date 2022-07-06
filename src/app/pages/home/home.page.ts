@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Set } from '../../models/set.model';
+import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
+import { Set } from '../../models/set.model';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,9 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  sets$: Observable<Response>;
+  sets$: Observable<Set[]>;
 
-  constructor(private dataService: DataService) {}
+  constructor(private router: Router, private dataService: DataService) {}
   ngOnInit() {
     this.getSets();
   }
@@ -22,5 +23,9 @@ export class HomePage {
     //   this.sets$ = setsData;
     //   console.log(this.sets$);
     // });
+  };
+
+  navigate = (id: string) => {
+    this.router.navigate(['/details', { uri: JSON.stringify(id) }]);
   };
 }

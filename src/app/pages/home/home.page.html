@@ -1,10 +1,24 @@
-<ion-header [translucent]="true">
+<ion-header translucent="true" class="ion-no-border">
+  <img class="portrait" src="assets/mtg.png" alt="" />
   <ion-toolbar>
-    <ion-title> Blank </ion-title>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-back-button></ion-back-button>
+      </ion-button>
+    </ion-buttons>
+    <ion-title size="large">Sets</ion-title>
   </ion-toolbar>
+
+  <div class="titles">
+    <ion-searchbar
+      class="ion-no-padding ion-padding-top"
+      [(ngModel)]="card"
+      animated="true"
+    ></ion-searchbar>
+  </div>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Blank</ion-title>
@@ -12,6 +26,6 @@
   </ion-header>
 
   <div *ngFor="let set of sets$ | async">
-    <app-set [set]="set"></app-set>
+    <app-set [set]="set" (click)="navigate(set.id)"></app-set>
   </div>
 </ion-content>
