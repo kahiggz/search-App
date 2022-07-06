@@ -16,8 +16,8 @@ export class HomePage {
   }
 
   getSets = () => {
-    const setsObservable = this.dataService.getSets();
-    setsObservable.subscribe((setsData: Set[]) => {
+    const setsObservable$ = this.dataService.getSets();
+    setsObservable$.subscribe((setsData: any) => {
       this.sets = setsData;
       console.log(this.sets);
     });
