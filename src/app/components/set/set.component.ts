@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Set } from 'src/app/models/set.model';
 
 @Component({
   selector: 'app-set',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./set.component.scss'],
 })
 export class SetComponent implements OnInit {
-  @Input() set: any;
+  @Input() set: Set;
   noImage: boolean = false;
 
   constructor() {}
