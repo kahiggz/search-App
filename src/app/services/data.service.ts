@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { mockSetsData } from '../services/mockData';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { filter, find, map } from 'rxjs/operators';
+import { Set } from '../models/set.model';
 
 @Injectable({
   providedIn: 'root',
@@ -10,17 +11,13 @@ import { map } from 'rxjs/operators';
 export class DataService {
   constructor(private http: HttpClient) {}
 
-  getSets = () => {
+  getSets = (): Observable<Set[]> => {
+    return this.http.get('assets/mockData.json').pipe(map((res: Set[]) => res));
+  };
+
+  getSpecificSet = (id: string): Observable<Set[]> => {
     return this.http
       .get('assets/mockData.json')
-      .pipe(map((res: Response) => res));
-
-    // const setsObservable = new Observable((observer) => {
-    //   setTimeout(() => {
-    //     observer.next(mockSetsData);
-    //   }, 3000);
-    // });
-
-    // return setsObservable;
+      .pipe(map((res: Set[]) => res.filter((re: Set) => re.id === id)));
   };
 }
