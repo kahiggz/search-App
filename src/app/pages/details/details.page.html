@@ -6,7 +6,10 @@
         <ion-back-button></ion-back-button>
       </ion-button>
     </ion-buttons>
-    <ion-title>{{set_name}}</ion-title>
+
+    <div *ngFor="let set of set$|async">
+      <ion-title>{{set.name }}</ion-title>
+    </div>
   </ion-toolbar>
 </ion-header>
 

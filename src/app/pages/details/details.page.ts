@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Set } from 'src/app/models/set.model';
 import { DataService } from '../../services/data.service';
 
 @Component({
@@ -9,21 +11,14 @@ import { DataService } from '../../services/data.service';
 })
 export class DetailsPage implements OnInit {
   id: string;
-  set$: any;
+  set$: Observable<Set[]>;
 
   constructor(private route: ActivatedRoute, private dataService: DataService) {
     this.id = JSON.parse(this.route.snapshot.paramMap.get('uri'));
   }
 
   ngOnInit() {
-    this.getSets(this.id);
+    // this.getSets(this.id);
+    this.set$ = this.dataService.getSpecificSet(this.id);
   }
-
-  getSets = async (id: string) => {
-    this.set$ = this.dataService.getSpecificSet(id);
-
-    this.set$.subscribe((setsData: any) => {
-      console.log(setsData);
-    });
-  };
 }
