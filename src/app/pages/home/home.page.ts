@@ -19,10 +19,6 @@ export class HomePage {
 
   getSets = () => {
     return (this.sets$ = this.dataService.getSets());
-    // this.sets$.subscribe((setsData: any) => {
-    //   this.sets$ = setsData;
-    //   console.log(this.sets$);
-    // });
   };
 
   navigate = (id: string) => {
