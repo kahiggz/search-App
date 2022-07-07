@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { mockSetsData } from '../services/mockData';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { filter, find, map } from 'rxjs/operators';
 import { Set } from '../models/set.model';
