@@ -4,6 +4,7 @@
 
 This is a Simple Search app that filter through MTG sets(dummy data) reactively.
 
+
 ### Built With
 
 * [Ionic-Angular](https://ionicframework.com/)
@@ -32,3 +33,15 @@ Clone this repository to your local machine
    ```sh
    ionic serve
    ```
+   
+   <!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [Ionic Framework](https://ionicframework.com/docs)
+* [Random Data API](https://scryfall.com/docs/api)
+
+
+
+
+
+
+
