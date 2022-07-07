@@ -18,7 +18,7 @@ export class HomePage {
   }
 
   getSets = () => {
-    this.sets$ = this.dataService.getSets();
+    return (this.sets$ = this.dataService.getSets());
     // this.sets$.subscribe((setsData: any) => {
     //   this.sets$ = setsData;
     //   console.log(this.sets$);
@@ -26,6 +26,6 @@ export class HomePage {
   };
 
   navigate = (id: string) => {
-    this.router.navigate(['/details', { uri: JSON.stringify(id) }]);
+    return this.router.navigate(['/details', { uri: JSON.stringify(id) }]);
   };
 }

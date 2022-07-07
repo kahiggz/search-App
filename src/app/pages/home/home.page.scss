@@ -21,44 +21,29 @@ ion-toolbar {
 .titles {
   padding: 0 1rem;
   display: flex;
-  // flex-wrap: nowrap;
 }
 
 .count {
   margin-left: 8px;
 }
 
-// ion-searchbar {
-//   // --background: rgba(0, 0, 0, 0.04);
-//   // --box-shadow: none;
-//   --border-radius: 6px;
-//   margin-bottom: 7px;
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+// .parent-grid {
+//   padding: 0px;
+// }
+// .stories-row {
+//   display: grid;
+//   justify-content: center;
+//   align-content: center;
 // }
 
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
+// @media only screen and (max-width: 600px) {
+//   body {
+//     background-color: lightblue;
+//   }
+// }
