@@ -7,7 +7,7 @@ import { DataService } from './data.service';
 import { mockSetsData } from './mockData';
 import { Set } from '../models/set.model';
 
-fdescribe('DataService', () => {
+describe('DataService', () => {
   let service: DataService;
   let httpTestingController: HttpTestingController;
   const baseUrl = 'assets/mockData.json';
