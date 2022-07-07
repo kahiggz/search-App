@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SetComponent } from './set/set.component';
-import { DetailsComponent } from './details/details.component';
 
 @NgModule({
-  declarations: [SetComponent, DetailsComponent],
+  declarations: [SetComponent],
   imports: [CommonModule],
-  exports: [SetComponent, DetailsComponent],
+  exports: [SetComponent],
 })
 export class SharedModule {}
