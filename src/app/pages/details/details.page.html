@@ -1,21 +1,33 @@
 <ion-header translucent="true" class="ion-no-border">
-  <img class="portrait" src="assets/mtg.png" alt="" />
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button>
-        <ion-back-button></ion-back-button>
-      </ion-button>
-    </ion-buttons>
-    <div *ngIf="(set$|async )?.length > 0">
-      <div *ngFor="let set of set$|async">
-        <ion-title size="large">{{set.name }}</ion-title>
-      </div>
-    </div>
-  </ion-toolbar>
+  <ion-grid>
+    <ion-row class="cards-row">
+      <ion-col size-xl="3" size-md="6" size-xs="12">
+        <img class="portrait" src="assets/mtg.png" alt="" />
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button>
+              <ion-back-button></ion-back-button>
+            </ion-button>
+          </ion-buttons>
+          <div *ngIf="(set$|async )?.length > 0">
+            <div *ngFor="let set of set$|async">
+              <ion-title size="large">{{set.name }}</ion-title>
+            </div>
+          </div>
+        </ion-toolbar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-header>
 
 <ion-content>
-  <div *ngFor="let set of set$|async">
-    <app-set [set]="set"></app-set>
-  </div>
+  <ion-grid>
+    <ion-row class="cards-row">
+      <ion-col size-xl="3" size-md="6" size-xs="12">
+        <div *ngFor="let set of set$|async">
+          <app-set [set]="set"></app-set>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
