@@ -1,31 +1,45 @@
 <ion-header translucent="true" class="ion-no-border">
-  <img class="portrait" src="assets/mtg.png" alt="" />
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button>
-        <ion-back-button></ion-back-button>
-      </ion-button>
-    </ion-buttons>
-    <ion-title size="large">Sets</ion-title>
-  </ion-toolbar>
+  <ion-grid>
+    <ion-row class="cards-row">
+      <ion-col size-xl="3" size-md="6" size-xs="12">
+        <img class="portrait" src="assets/mtg.png" alt="" />
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button>
+              <ion-back-button></ion-back-button>
+            </ion-button>
+          </ion-buttons>
+          <ion-title size="large">Sets</ion-title>
+        </ion-toolbar>
 
-  <div class="titles">
-    <ion-searchbar
-      class="ion-no-padding"
-      [(ngModel)]="searchText"
-      animated="true"
-    ></ion-searchbar>
+        <div class="titles">
+          <ion-searchbar
+            class="ion-no-padding"
+            [(ngModel)]="searchText"
+            animated="true"
+          ></ion-searchbar>
 
-    <div>
-      <ion-chip class="count">
-        <ion-label>{{(sets$ | async | filter: searchText)?.length}}</ion-label>
-      </ion-chip>
-    </div>
-  </div>
+          <div>
+            <ion-chip class="count">
+              <ion-label
+                >{{(sets$ | async | filter: searchText)?.length}}</ion-label
+              >
+            </ion-chip>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-header>
 
 <ion-content>
-  <div *ngFor="let set of sets$ | async  | filter: searchText">
-    <app-set [set]="set" (click)="navigate(set.id)"></app-set>
-  </div>
+  <ion-grid>
+    <ion-row class="cards-row">
+      <ion-col size-xl="3" size-md="6" size-xs="12">
+        <div *ngFor="let set of sets$ | async  | filter: searchText">
+          <app-set [set]="set" (click)="navigate(set.id)"></app-set>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
