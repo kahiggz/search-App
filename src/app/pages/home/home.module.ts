@@ -7,8 +7,6 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { SharedModule } from '../../components/shared.module';
 import { FilterPipe } from '../../pipes/filter.pipe';
-import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 @NgModule({
   imports: [
@@ -17,8 +15,6 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
     IonicModule,
     SharedModule,
     HomePageRoutingModule,
-    RouterTestingModule,
-    HttpClientTestingModule,
   ],
   declarations: [HomePage, FilterPipe],
 })
