@@ -18,7 +18,6 @@ export class DetailsPage implements OnInit {
   }
 
   ngOnInit() {
-    // this.getSets(this.id);
     this.set$ = this.dataService.getSpecificSet(this.id);
   }
 }

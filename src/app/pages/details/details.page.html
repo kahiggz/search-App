@@ -6,11 +6,16 @@
         <ion-back-button></ion-back-button>
       </ion-button>
     </ion-buttons>
-
-    <div *ngFor="let set of set$|async">
-      <ion-title>{{set.name }}</ion-title>
+    <div *ngIf="(set$|async )?.length > 0">
+      <div *ngFor="let set of set$|async">
+        <ion-title size="large">{{set.name }}</ion-title>
+      </div>
     </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content> </ion-content>
+<ion-content>
+  <div *ngFor="let set of set$|async">
+    <app-detail [set]="set"></app-detail>
+  </div>
+</ion-content>
