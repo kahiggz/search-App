@@ -8,6 +8,8 @@ import { DetailsPageRoutingModule } from './details-routing.module';
 
 import { DetailsPage } from './details.page';
 import { SharedModule } from '../../components/shared.module';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 @NgModule({
   imports: [
@@ -15,6 +17,8 @@ import { SharedModule } from '../../components/shared.module';
     FormsModule,
     IonicModule,
     SharedModule,
+    RouterTestingModule,
+    HttpClientTestingModule,
     DetailsPageRoutingModule,
   ],
   declarations: [DetailsPage],

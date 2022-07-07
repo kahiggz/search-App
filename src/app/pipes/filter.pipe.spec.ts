@@ -1,7 +1,7 @@
 import { mockSetsData } from '../services/mockData';
 import { FilterPipe } from './filter.pipe';
 
-fdescribe('FilterPipe', () => {
+describe('FilterPipe', () => {
   it('should return a key word', () => {
     const pipe = new FilterPipe();
     expect(pipe).toBeTruthy();
