@@ -22,7 +22,7 @@ Clone this repository to your local machine
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Higgz1/Instagram-Clone.git
+   git clone https://github.com/kahiggz/search-App.git
    ```
 2. Install NPM packages
    ```sh
