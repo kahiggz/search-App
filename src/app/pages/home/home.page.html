@@ -11,21 +11,21 @@
 
   <div class="titles">
     <ion-searchbar
-      class="ion-no-padding ion-padding-top"
-      [(ngModel)]="card"
+      class="ion-no-padding"
+      [(ngModel)]="searchText"
       animated="true"
     ></ion-searchbar>
+
+    <div>
+      <ion-chip class="count">
+        <ion-label>{{(sets$ | async | filter: searchText)?.length}}</ion-label>
+      </ion-chip>
+    </div>
   </div>
 </ion-header>
 
 <ion-content>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div *ngFor="let set of sets$ | async">
+  <div *ngFor="let set of sets$ | async  | filter: searchText">
     <app-set [set]="set" (click)="navigate(set.id)"></app-set>
   </div>
 </ion-content>
