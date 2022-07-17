@@ -37,7 +37,10 @@
     <ion-row class="cards-row">
       <ion-col size-xl="3" size-md="6" size-xs="12">
         <div *ngFor="let set of sets$ | async  | filter: searchText">
-          <app-set [set]="set" (click)="navigate(set.id)"></app-set>
+          <app-set
+            [set]="set"
+            (click)="navigateToDetailsPage(set.id)"
+          ></app-set>
         </div>
       </ion-col>
     </ion-row>
