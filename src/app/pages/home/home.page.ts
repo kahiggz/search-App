@@ -17,11 +17,11 @@ export class HomePage {
     this.getSets();
   }
 
-  getSets = () => {
+  getSets() {
     return (this.sets$ = this.dataService.getSets());
-  };
+  }
 
-  navigate = (id: string) => {
+  navigateToDetailsPage(id: string) {
     return this.router.navigate(['/details', { uri: JSON.stringify(id) }]);
-  };
+  }
 }
