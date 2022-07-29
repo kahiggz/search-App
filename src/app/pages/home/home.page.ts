@@ -18,7 +18,7 @@ export class HomePage {
   }
 
   getSets() {
-    return (this.sets$ = this.dataService.getSets());
+    this.sets$ = this.dataService.getSets();
   }
 
   navigateToDetailsPage(id: string) {
